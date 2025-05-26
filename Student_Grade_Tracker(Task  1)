@@ -1,0 +1,43 @@
+package CodeAlpha;
+import java.util.*;
+public class Student_Grade_Tracker
+{
+
+	public static void main(String[] args) 
+	{
+		 Scanner sc= new Scanner(System.in);
+	     ArrayList<Integer> g = new ArrayList<>();
+	     System.out.println("Enter the Number of Students:");
+	     int n=sc.nextInt();
+	     for(int i=0;i<n;i++)
+	     {
+	    	System.out.println("Enter the Students Grade"+(i+1)+":");
+	    	int grade=sc.nextInt();
+	    	g.add(grade);
+	     }
+         int sum=0;
+         int highest=g.get(0);
+         int lowest=g.get(0);
+         
+         for(int grade:g)
+         {
+        	 sum = sum + grade;
+        	 if( grade > highest)
+        	{
+        		 highest = grade;
+         	}
+        	 if(grade < lowest)
+        	{
+        		 lowest=grade;
+            }
+         }
+         
+         double avg=sum/g.size();
+        
+        System.out.println("Grade :");
+        System.out.println("Average Grade:" +avg);
+        System.out.println("Highest Grade:"+ highest);
+        System.out.println("Lowest Grade:"+ lowest);
+        
+         }
+}
